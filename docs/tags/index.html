@@ -8,7 +8,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://hello-world-example.github.io/MyBatis/tags/" />
-<meta property="og:updated_time" content="2014-04-02T00:00:00+00:00" />
+
 <title>Tags | MyBatis</title>
 <link rel="icon" href="/MyBatis/favicon.png" type="image/x-icon">
 
@@ -48,83 +48,12 @@ https://github.com/alex-shpak/hugo-book
 
 
   <ul>
-<li>
-<p>
-  <a href="/MyBatis/docs/example/"><strong>Example Site</strong></a></p>
-</li>
-<li>
-<p>
-  <a href="/MyBatis/docs/example/table-of-contents/">Table of Contents</a></p>
-<ul>
-<li>
-  <a href="/MyBatis/docs/example/table-of-contents/with-toc/">With ToC</a></li>
-<li>
-  <a href="/MyBatis/docs/example/table-of-contents/without-toc/">Without ToC</a></li>
-</ul>
-</li>
-<li>
-<p>
-  <a href="/MyBatis/docs/example/collapsed/">Collapsed</a></p>
-<ul>
-<li>
-  <a href="/MyBatis/docs/example/collapsed/3rd-level/">3rd</a>
-<ul>
-<li>
-  <a href="/MyBatis/docs/example/collapsed/3rd-level/4th-level/">4th</a>
-<br /></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Shortcodes</strong></p>
-</li>
-<li>
-<p>
-  <a href="/MyBatis/docs/shortcodes/buttons/">Buttons</a></p>
-</li>
-<li>
-<p>
-  <a href="/MyBatis/docs/shortcodes/columns/">Columns</a></p>
-</li>
-<li>
-<p>
-  <a href="/MyBatis/docs/shortcodes/expand/">Expand</a></p>
-</li>
-<li>
-<p>
-  <a href="/MyBatis/docs/shortcodes/hints/">Hints</a></p>
-</li>
-<li>
-<p>
-  <a href="/MyBatis/docs/shortcodes/katex/">Katex</a></p>
-</li>
-<li>
-<p>
-  <a href="/MyBatis/docs/shortcodes/mermaid/">Mermaid</a></p>
-</li>
-<li>
-<p>
-  <a href="/MyBatis/docs/shortcodes/tabs/">Tabs</a>
-<br /></p>
-</li>
+<li>[<strong>Example Site</strong>]({&lt; relref &ldquo;/docs/example&rdquo; &gt;}})</li>
 </ul>
 
 
 
 
-
-
-  
-<ul>
-  
-  <li>
-    <a href="/MyBatis/posts/" >
-        Blog
-      </a>
-  </li>
-  
-</ul>
 
 
 
@@ -170,16 +99,6 @@ https://github.com/alex-shpak/hugo-book
       <strong>Categories</strong>
       <ul>
       
-        <li class="flex justify-between">
-          <a href="/MyBatis/categories/Development/">Development</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/categories/golang/">golang</a>
-          <span>2</span>
-        </li>
-      
       </ul>
     </li>
     
@@ -188,36 +107,6 @@ https://github.com/alex-shpak/hugo-book
     <li class="book-section-flat">
       <strong>Tags</strong>
       <ul>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/tags/development/">development</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/tags/go/">go</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/tags/golang/">golang</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/tags/hugo/">hugo</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/tags/templates/">templates</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/tags/themes/">themes</a>
-          <span>1</span>
-        </li>
       
       </ul>
     </li>
@@ -238,18 +127,6 @@ https://github.com/alex-shpak/hugo-book
   <h1>Tags</h1>
   
   
-    <div><a href="https://hello-world-example.github.io/MyBatis/tags/development/">development <sup>2</sup></a></div>
-  
-    <div><a href="https://hello-world-example.github.io/MyBatis/tags/go/">go <sup>2</sup></a></div>
-  
-    <div><a href="https://hello-world-example.github.io/MyBatis/tags/golang/">golang <sup>2</sup></a></div>
-  
-    <div><a href="https://hello-world-example.github.io/MyBatis/tags/hugo/">hugo <sup>1</sup></a></div>
-  
-    <div><a href="https://hello-world-example.github.io/MyBatis/tags/templates/">templates <sup>1</sup></a></div>
-  
-    <div><a href="https://hello-world-example.github.io/MyBatis/tags/themes/">themes <sup>1</sup></a></div>
-  
 </article>
  
       
@@ -266,6 +143,18 @@ https://github.com/alex-shpak/hugo-book
 
  
         
+<script>
+var images = document.getElementsByTagName("img")
+console.info(images.length)
+for(var i=0; i<images.length; i++){
+  var image = images[i]
+  var src = image.getAttribute("src");
+  if(src.startsWith("-images")){
+    image.setAttribute("src", "../" + src)
+  }
+}
+</script>
+
       </footer>
 
       
@@ -286,16 +175,6 @@ https://github.com/alex-shpak/hugo-book
       <strong>Categories</strong>
       <ul>
       
-        <li class="flex justify-between">
-          <a href="/MyBatis/categories/Development/">Development</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/categories/golang/">golang</a>
-          <span>2</span>
-        </li>
-      
       </ul>
     </li>
     
@@ -304,36 +183,6 @@ https://github.com/alex-shpak/hugo-book
     <li class="book-section-flat">
       <strong>Tags</strong>
       <ul>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/tags/development/">development</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/tags/go/">go</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/tags/golang/">golang</a>
-          <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/tags/hugo/">hugo</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/tags/templates/">templates</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/MyBatis/tags/themes/">themes</a>
-          <span>1</span>
-        </li>
       
       </ul>
     </li>
