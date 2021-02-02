@@ -16,4 +16,11 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.54chen</groupId>
+            <artifactId>paoding-rose-jade</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

@@ -8,9 +8,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
-import xyz.kail.demo.mybatis.core.dao.mysql.HelpKeyWordDAO;
-import xyz.kail.demo.mybatis.core.dao.mysql.HelpKeywordVO;
 import xyz.kail.demo.mybatis.core.datasource.DataSourceFactory;
+import xyz.kail.demo.mybatis.core.mapper.HelpKeyWordMapper;
+import xyz.kail.demo.mybatis.core.mapper.HelpKeywordVO;
 
 import javax.sql.DataSource;
 import java.util.List;
@@ -42,7 +42,7 @@ public class CodeMain {
         configuration.setReturnInstanceForEmptyRow(false);
 
         // 手动注册 DAO
-        configuration.addMapper(HelpKeyWordDAO.class);
+        configuration.addMapper(HelpKeyWordMapper.class);
 
         /*
          * 根据配置创建全局 Session 工厂
@@ -53,7 +53,7 @@ public class CodeMain {
          * 一个 Session 链接
          */
         try (final SqlSession connection = sessionFactory.openSession()) {
-            final HelpKeyWordDAO keyWordDAO = connection.getMapper(HelpKeyWordDAO.class);
+            final HelpKeyWordMapper keyWordDAO = connection.getMapper(HelpKeyWordMapper.class);
 
             final List<HelpKeywordVO> helpKeywords = keyWordDAO.selectAll();
 
