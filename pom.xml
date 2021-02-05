@@ -67,6 +67,8 @@
                 <version>${mybatis.spring.boot.version}</version>
             </dependency>
 
+            <!-- region plus -->
+
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-core</artifactId>
@@ -91,6 +93,8 @@
                 <version>${mybatis.plus.version}</version>
             </dependency>
 
+            <!-- endregion -->
+
             <dependency>
                 <groupId>com.54chen</groupId>
                 <artifactId>paoding-rose-jade</artifactId>
@@ -106,7 +110,6 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-
 
 
             <dependency>

@@ -17,10 +17,27 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>com.54chen</groupId>
             <artifactId>paoding-rose-jade</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
