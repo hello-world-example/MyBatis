@@ -6,12 +6,12 @@
 
     <groupId>MyBatis</groupId>
     <artifactId>MyBatis</artifactId>
-    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
     <modules>
-        <module>demo-mybatis-boot</module>
         <module>demo-mybatis-core</module>
-        <module>demo-mybatis-rose</module>
+        <module>demo-mybatis-boot</module>
         <module>demo-mybatis-plus</module>
     </modules>
 

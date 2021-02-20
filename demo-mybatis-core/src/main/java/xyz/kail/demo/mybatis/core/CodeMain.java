@@ -21,11 +21,11 @@ import java.util.List;
 public class CodeMain {
 
     public static void main(String[] args) {
+        final DataSource mySqlDatasource = DataSourceFactory.getMySqlDatasource();
         /*
          * 事务与数据源
          */
         final TransactionFactory transactionFactory = new JdbcTransactionFactory();
-        final DataSource mySqlDatasource = DataSourceFactory.getMySqlDatasource();
         final Environment mysql = new Environment("mysql", transactionFactory, mySqlDatasource);
 
         /*
