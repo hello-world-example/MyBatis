@@ -9,10 +9,19 @@ import java.util.List;
 @Mapper
 public interface ProcMapper {
 
-    @Select("select count(*) from proc")
     Integer count();
 
-    @Select("select * from proc")
-    List<ProcVO> selectAll();
+    /**
+     * 查不到数据时：返回空列表
+     */
+    @Select("select * from proc wher4 where db=123")
+    List<ProcVO> selectEmptyAll();
+
+    /**
+     * 查不到数据时：返回 null
+     */
+    @Select("select * from proc wher4 where db=123")
+    ProcVO selectEmptyOne();
+
 
 }

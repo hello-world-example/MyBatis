@@ -13,6 +13,7 @@
         <module>demo-mybatis-core</module>
         <module>demo-mybatis-boot</module>
         <module>demo-mybatis-plus</module>
+        <module>demo-mybatis-draw</module>
     </modules>
 
 
@@ -156,6 +157,23 @@
     </dependencies>
 
     <build>
+
+        <resources>
+            <!-- java 目录下只拷贝 xml，如： Mapper.xml -->
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <!-- resources 目录下的所有文件都拷贝 -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
 
         <plugins>
 
