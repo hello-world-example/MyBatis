@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.kail.demo.mybatis.spring.boot.mapper.sys.SysConfigMapper">
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        `variable`, `value`, set_time, set_by
+    </sql>
+
+    <select id="countAll" resultType="integer">
+        select count(*)
+        from sys_config
+    </select>
+</mapper>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="xyz.kail.demo.mybatis.spring.boot.mapper.ServerCostMapper">
+<mapper namespace="xyz.kail.demo.mybatis.spring.boot.mapper.mysql.ServerCostMapper">
     <resultMap id="BaseResultMap" type="xyz.kail.demo.mybatis.spring.boot.model.ServerCostVO">
         <!--@Table server_cost-->
         <id column="cost_name" jdbcType="VARCHAR" property="costName"/>
@@ -28,7 +28,7 @@
         from server_cost
     </select>
 
-    <select id="selectNullFieldOne" resultMap="BaseResultMap">
+    <select id="selectNullFieldOne" resultType="xyz.kail.demo.mybatis.spring.boot.model.ServerCostVO">
         select cost_value, comment
         from server_cost
         limit 1

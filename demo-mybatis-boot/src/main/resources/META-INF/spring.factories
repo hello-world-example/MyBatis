@@ -1,0 +1,6 @@
+## Auto Configuration Import Filters
+org.springframework.boot.autoconfigure.AutoConfigurationImportFilter=\
+xyz.kail.demo.mybatis.spring.boot.conf.MultiDatasourceConfigure
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+xyz.kail.demo.mybatis.spring.boot.conf.support.MyBatisBeanFactoryPostProcessor

@@ -1,4 +1,4 @@
-package xyz.kail.demo.mybatis.spring.boot.mapper;
+package xyz.kail.demo.mybatis.spring.boot.mapper.mysql;
 
 import xyz.kail.demo.mybatis.spring.boot.model.ServerCostVO;
 import org.apache.ibatis.annotations.Mapper;
