@@ -1,4 +1,4 @@
-package xyz.kail.demo.mybatis.spring.boot.autoconfigure.support;
+package xyz.kail.demo.mybatis.spring.boot.autoconfigure;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -8,7 +8,6 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
-import org.springframework.boot.autoconfigure.AutoConfigurationPackages;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +20,7 @@ import java.util.*;
  * @see MapperScannerConfigurer#postProcessBeanDefinitionRegistry
  */
 @Configuration
-public class MyBatisBeanFactoryPostProcessor implements ApplicationContextAware, BeanDefinitionRegistryPostProcessor {
+public class MyBatisMultiDataSourceProcessorConfigure implements ApplicationContextAware, BeanDefinitionRegistryPostProcessor {
 
     /**
      * DataSource Bean Name 符合以下前缀规范，支持自定义配置
@@ -32,7 +31,7 @@ public class MyBatisBeanFactoryPostProcessor implements ApplicationContextAware,
     };
 
     public static final String MAPPING_BEAN_NAME = //
-            MyBatisBeanFactoryPostProcessor.class.getSimpleName() + ".dataSourcePackageMappings";
+            MyBatisMultiDataSourceProcessorConfigure.class.getSimpleName() + ".dataSourcePackageMappings";
 
     private ApplicationContext applicationContext;
 
