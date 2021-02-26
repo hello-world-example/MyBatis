@@ -1,4 +1,4 @@
-package xyz.kail.demo.mybatis.spring.boot.conf;
+package xyz.kail.demo.mybatis.spring.boot.autoconfigure;
 
 import org.apache.ibatis.reflection.Reflector;
 import org.apache.ibatis.session.AutoMappingUnknownColumnBehavior;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 @Configuration
-public class MyBatisConf {
+public class MyBatisDefaultConf {
 
     @Component
     public static class Conf implements ConfigurationCustomizer {
