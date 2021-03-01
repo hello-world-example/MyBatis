@@ -1,4 +1,4 @@
-package xyz.kail.demo.mybatis.spring.boot.autoconfigure.support;
+package org.kail.demo.mybatis.spring.boot.autoconfigure.support;
 
 import org.apache.ibatis.mapping.DatabaseIdProvider;
 import org.apache.ibatis.plugin.Interceptor;
@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.util.*;
 
-import static xyz.kail.demo.mybatis.spring.boot.autoconfigure.MyBatisMultiDataSourceProcessorConfigure.MAPPING_BEAN_NAME;
+import static org.kail.demo.mybatis.spring.boot.autoconfigure.MyBatisMultiDataSourceProcessorConfigure.MAPPING_BEAN_NAME;
 
 @Configuration
 @EnableConfigurationProperties(MybatisProperties.class)

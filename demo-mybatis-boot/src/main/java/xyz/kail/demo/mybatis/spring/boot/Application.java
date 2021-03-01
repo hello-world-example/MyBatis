@@ -16,12 +16,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @see ConfigurationCustomizer 自定义配置
  */
 @SpringBootApplication
-//@EnableTransactionManagement
 public class Application {
 
     public static void main(String[] args) {
+        SpringApplication springApplication = new SpringApplication(Application.class);
 
-        SpringApplication.run(Application.class, args);
+        springApplication.run(args);
     }
 
 }

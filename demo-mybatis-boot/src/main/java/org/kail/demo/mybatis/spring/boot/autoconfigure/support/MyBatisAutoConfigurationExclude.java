@@ -1,4 +1,4 @@
-package xyz.kail.demo.mybatis.spring.boot.autoconfigure.support;
+package org.kail.demo.mybatis.spring.boot.autoconfigure.support;
 
 import org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigurationImportFilter;

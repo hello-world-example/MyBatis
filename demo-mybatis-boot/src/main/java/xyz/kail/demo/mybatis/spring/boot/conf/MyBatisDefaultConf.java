@@ -1,4 +1,4 @@
-package xyz.kail.demo.mybatis.spring.boot.autoconfigure;
+package xyz.kail.demo.mybatis.spring.boot.conf;
 
 import org.apache.ibatis.reflection.Reflector;
 import org.apache.ibatis.session.AutoMappingUnknownColumnBehavior;

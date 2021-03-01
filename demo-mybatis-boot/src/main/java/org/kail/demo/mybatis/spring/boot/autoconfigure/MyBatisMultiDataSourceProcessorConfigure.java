@@ -1,15 +1,18 @@
-package xyz.kail.demo.mybatis.spring.boot.autoconfigure;
+package org.kail.demo.mybatis.spring.boot.autoconfigure;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.ClassPathMapperScanner;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.util.StringUtils;
 
@@ -163,6 +166,7 @@ public class MyBatisMultiDataSourceProcessorConfigure implements ApplicationCont
         scanner.setAnnotationClass(Mapper.class);
         scanner.setResourceLoader(applicationContext);
         scanner.setSqlSessionFactoryBeanName(SqlSessionFactory.class.getSimpleName() + "." + packages);
+        scanner.setLazyInitialization(true);
         scanner.registerFilters();
         scanner.scan(packages);
     }
