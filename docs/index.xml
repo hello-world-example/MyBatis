@@ -15,7 +15,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hello-world-example.github.io/MyBatis/_sidebar/</guid>
-      <description> [Example Site]({&amp;lt; relref &amp;ldquo;/docs/example&amp;rdquo; &amp;gt;}})  </description>
+      <description>  Example  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hello-world-example.github.io/MyBatis/docs/example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hello-world-example.github.io/MyBatis/docs/example/</guid>
+      <description>example </description>
     </item>
     
   </channel>

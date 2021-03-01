@@ -2,4 +2,4 @@
 headless: true
 ---
 
-- [**Example Site**]({< relref "/docs/example" >}})
+- [**Example**]({{<relref "/docs/example.md" >}})

@@ -11,8 +11,4 @@ type: docs
   - [**MyBaits-Spring-ZH**](http://mybatis.org/spring/zh/index.html)
   - [**MyBatis-Spring-Boot**](http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/index.html)
 - **MyBatis Plus**: https://baomidou.com/
-- **插件**
-  - [MyBatisX](https://github.com/baomidou/MybatisX)
-    - Mapper 跳转
-    - 
 
