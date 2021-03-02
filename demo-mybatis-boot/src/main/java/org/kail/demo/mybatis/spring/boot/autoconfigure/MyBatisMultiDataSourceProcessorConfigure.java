@@ -2,12 +2,14 @@ package org.kail.demo.mybatis.spring.boot.autoconfigure;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.kail.demo.mybatis.spring.boot.autoconfigure.support.MyBatisSqlSessionFactoryServletInitializer;
 import org.kail.demo.mybatis.spring.boot.autoconfigure.support.MyBatisSqlSessionFactoryInitListener;
 import org.kail.demo.mybatis.spring.boot.autoconfigure.support.MyBatisSqlSessionFactoryInitEvent;
 import org.kail.demo.mybatis.spring.boot.autoconfigure.support.MyBatisSqlSessionFactoryInit;
 import org.mybatis.spring.mapper.ClassPathMapperScanner;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
@@ -22,7 +24,11 @@ import java.util.*;
 /**
  * @see MapperScannerConfigurer#postProcessBeanDefinitionRegistry
  */
-@Import({MyBatisSqlSessionFactoryInit.class, MyBatisSqlSessionFactoryInitListener.class})
+@Import({
+        MyBatisSqlSessionFactoryInit.class,
+        MyBatisSqlSessionFactoryInitListener.class,
+        MyBatisSqlSessionFactoryServletInitializer.class,
+})
 public class MyBatisMultiDataSourceProcessorConfigure implements ApplicationContextAware, BeanDefinitionRegistryPostProcessor {
 
     /**
@@ -95,6 +101,12 @@ public class MyBatisMultiDataSourceProcessorConfigure implements ApplicationCont
 
             // 不是 DataSource，不处理
             if (null == beanType || !DataSource.class.isAssignableFrom(beanType)) {
+                continue;
+            }
+
+            BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanName);
+            // 抽象、非单例 不处理
+            if (beanDefinition.isAbstract() || beanDefinition.isPrototype()) {
                 continue;
             }
 

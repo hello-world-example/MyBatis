@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.event.SmartApplicationListener;
 import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.core.Ordered;
 
 /**
  * 把 MyBatisSqlSessionFactoryInit 的初始化时机提前，先进行初始化，
@@ -35,5 +36,10 @@ public class MyBatisSqlSessionFactoryInitListener implements SmartApplicationLis
         }
 
         return ApplicationContext.class.isAssignableFrom(sourceType);
+    }
+
+    @Override
+    public int getOrder() {
+        return Ordered.LOWEST_PRECEDENCE;
     }
 }

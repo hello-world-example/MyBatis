@@ -31,7 +31,9 @@
         <encoding>UTF-8</encoding>
 
         <!---->
-        <spring.boot.version>2.3.8.RELEASE</spring.boot.version>
+        <spring.boot.version>1.5.21.RELEASE</spring.boot.version>
+        <!--<spring.boot.version>2.3.8.RELEASE</spring.boot.version>-->
+
         <druid.version>1.2.4</druid.version>
         <rose.jade.version>1.1</rose.jade.version>
 
