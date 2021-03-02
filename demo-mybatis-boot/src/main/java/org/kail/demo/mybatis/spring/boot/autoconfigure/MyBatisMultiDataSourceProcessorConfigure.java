@@ -2,18 +2,18 @@ package org.kail.demo.mybatis.spring.boot.autoconfigure;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
+import org.kail.demo.mybatis.spring.boot.autoconfigure.support.MyBatisSqlSessionFactoryInitListener;
+import org.kail.demo.mybatis.spring.boot.autoconfigure.support.MyBatisSqlSessionFactoryInitEvent;
+import org.kail.demo.mybatis.spring.boot.autoconfigure.support.MyBatisSqlSessionFactoryInit;
 import org.mybatis.spring.mapper.ClassPathMapperScanner;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.util.StringUtils;
 
 import javax.sql.DataSource;
@@ -22,7 +22,7 @@ import java.util.*;
 /**
  * @see MapperScannerConfigurer#postProcessBeanDefinitionRegistry
  */
-@Configuration
+@Import({MyBatisSqlSessionFactoryInit.class, MyBatisSqlSessionFactoryInitListener.class})
 public class MyBatisMultiDataSourceProcessorConfigure implements ApplicationContextAware, BeanDefinitionRegistryPostProcessor {
 
     /**
@@ -78,6 +78,8 @@ public class MyBatisMultiDataSourceProcessorConfigure implements ApplicationCont
 
         // 注册 dataSource <-> packageName 的映射关系
         beanFactory.registerSingleton(MAPPING_BEAN_NAME, dataSourcePackageMappings);
+
+        applicationContext.publishEvent(new MyBatisSqlSessionFactoryInitEvent(applicationContext));
     }
 
 

@@ -35,16 +35,16 @@ public class DataSourceConfig {
         return dataSource;
     }
 
-//
-//    @Bean(name = "jade.dataSource.xyz.kail.demo.mybatis.spring.boot.mapper.sys")
-//    public DataSource sysDataSource() {
-//        final DruidDataSource dataSource = new DruidDataSource();
-//        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-//        dataSource.setUrl("jdbc:mysql://:3307/sys?useUnicode=true&characterEncoding=utf-8");
-//        dataSource.setUsername("root");
-//        dataSource.setPassword("123456");
-//        dataSource.setValidationQuery("SELECT 1");
-//        return dataSource;
-//    }
+
+    @Bean(name = "jade.dataSource.xyz.kail.demo.mybatis.spring.boot.mapper.sys")
+    public DataSource sysDataSource() {
+        final DruidDataSource dataSource = new DruidDataSource();
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://:3307/sys?useUnicode=true&characterEncoding=utf-8");
+        dataSource.setUsername("root");
+        dataSource.setPassword("123456");
+        dataSource.setValidationQuery("SELECT 1");
+        return dataSource;
+    }
 
 }

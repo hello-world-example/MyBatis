@@ -12,16 +12,15 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ResourceLoader;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 import static org.kail.demo.mybatis.spring.boot.autoconfigure.MyBatisMultiDataSourceProcessorConfigure.MAPPING_BEAN_NAME;
 
-@Configuration
 @EnableConfigurationProperties(MybatisProperties.class)
 public class MyBatisSqlSessionFactoryInit implements InitializingBean {
 
