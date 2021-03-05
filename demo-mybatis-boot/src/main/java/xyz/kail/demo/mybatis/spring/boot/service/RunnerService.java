@@ -38,5 +38,8 @@ public class RunnerService {
 
         System.out.println(sysConfigMapper.countAll());
 
+        //
+        System.out.println(serverCostMapper.selectNullFieldOne());
+
     }
 }

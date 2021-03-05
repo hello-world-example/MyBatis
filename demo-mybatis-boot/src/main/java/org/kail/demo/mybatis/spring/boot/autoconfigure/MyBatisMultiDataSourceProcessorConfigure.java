@@ -180,7 +180,6 @@ public class MyBatisMultiDataSourceProcessorConfigure implements ApplicationCont
         scanner.setAnnotationClass(Mapper.class);
         scanner.setResourceLoader(applicationContext);
         scanner.setSqlSessionFactoryBeanName(SqlSessionFactory.class.getSimpleName() + "." + packages);
-        scanner.setLazyInitialization(true);
         scanner.registerFilters();
         scanner.scan(packages);
     }
