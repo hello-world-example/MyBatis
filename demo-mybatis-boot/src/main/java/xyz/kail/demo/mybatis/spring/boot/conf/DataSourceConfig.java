@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.mapping.DatabaseIdProvider;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.scripting.LanguageDriver;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.type.TypeHandler;
 import org.mybatis.spring.boot.autoconfigure.ConfigurationCustomizer;
@@ -42,6 +43,17 @@ public class DataSourceConfig {
         final DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://:3307/sys?useUnicode=true&characterEncoding=utf-8");
+        dataSource.setUsername("root");
+        dataSource.setPassword("123456");
+        dataSource.setValidationQuery("SELECT 1");
+        return dataSource;
+    }
+
+    @Bean(name = "jade.dataSource.xyz.kail.demo.mybatis.spring.boot.mapper.mybatis")
+    public DataSource mybatisDataSource() {
+        final DruidDataSource dataSource = new DruidDataSource();
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://:3307/mybatis?useUnicode=true&characterEncoding=utf-8");
         dataSource.setUsername("root");
         dataSource.setPassword("123456");
         dataSource.setValidationQuery("SELECT 1");

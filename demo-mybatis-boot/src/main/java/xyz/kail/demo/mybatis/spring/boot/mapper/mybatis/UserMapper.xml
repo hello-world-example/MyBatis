@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xyz.kail.demo.mybatis.spring.boot.mapper.mybatis.UserMapper">
+
+    <update id="dropTable">
+        drop table if exists user;
+    </update>
+
+    <update id="initTable">
+        CREATE TABLE `user`
+        (
+            `ID`   bigint(20) NOT NULL AUTO_INCREMENT,
+            `NAME` varchar(50) DEFAULT NULL,
+            `AGE`  int(3)      DEFAULT NULL,
+            PRIMARY KEY (`ID`)
+        );
+    </update>
+
+    <insert id="insertBatch" useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
+        insert into user ( name, age ) values
+        <foreach collection="users" item="user" separator=",">
+            (#{user.name}, #{user.age})
+        </foreach>
+    </insert>
+
+    <select id="selectBatch" resultType="xyz.kail.demo.mybatis.spring.boot.model.mybatis.UserVO">
+        select * from `user`
+        where id in
+        <foreach collection="userIds" item="userId" open="(" separator="," close=")">
+            #{userId}
+        </foreach>
+    </select>
+
+    <select id="selectWhere" resultType="xyz.kail.demo.mybatis.spring.boot.model.mybatis.UserVO">
+        select * from `user`
+        <where>
+            <if test="user != null and user.name != null">
+                AND name = #{user.name}
+            </if>
+            <if test="user != null and user.age != null">
+                AND age = #{user.age}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateSet">
+        update user
+        <set>
+            <if test="user != null and user.name != null">
+                name = #{user.name},
+            </if>
+            <if test="user != null and user.age != null">
+                age = #{user.age},
+            </if>
+        </set>
+        <where>
+            <if test="user != null and user.age != null">
+                AND id = #{user.id}
+            </if>
+        </where>
+    </update>
+
+    <select id="selectTrim" resultType="xyz.kail.demo.mybatis.spring.boot.model.mybatis.UserVO">
+        select * from `user`
+        <trim prefix="where" prefixOverrides="AND|OR">
+            <if test="user != null and user.name != null">
+                AND name = #{user.name}
+            </if>
+            <if test="user != null and user.age != null">
+                AND age = #{user.age}
+            </if>
+        </trim>
+    </select>
+
+    <update id="updateTrim">
+        update user
+        <trim prefix="set" suffixOverrides="," >
+            <if test="user != null and user.name != null">
+                name = #{user.name},
+            </if>
+            <if test="user != null and user.age != null">
+                age = #{user.age},
+            </if>
+        </trim>
+        <where>
+            <if test="user != null and user.age != null">
+                AND id = #{user.id}
+            </if>
+        </where>
+    </update>
+
+</mapper>

@@ -1,9 +1,0 @@
-#
-#
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-org.kail.demo.mybatis.spring.boot.autoconfigure.MyBatisMultiDataSourceProcessorConfigure
-#
-## Auto Configuration Import Filters
-org.springframework.boot.autoconfigure.AutoConfigurationImportFilter=\
-org.kail.demo.mybatis.spring.boot.autoconfigure.support.MyBatisAutoConfigurationExclude
-

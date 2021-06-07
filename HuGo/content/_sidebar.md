@@ -2,4 +2,5 @@
 headless: true
 ---
 
-- [**Example**]({{<relref "/docs/example.md" >}})
+- [常用示例]({{<relref "/docs/Example.md" >}})
+
