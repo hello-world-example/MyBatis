@@ -96,7 +96,7 @@ Integer updateScript(@Param("user") UserVO user);
 
 ## if 条件导致 SQL 问题
 
-> [trim、where、set]([mybatis – MyBatis 3 | 动态 SQL](https://mybatis.org/mybatis-3/zh/dynamic-sql.html#trim.E3.80.81where.E3.80.81set))
+> [trim、where、set](https://mybatis.org/mybatis-3/zh/dynamic-sql.html#trim.E3.80.81where.E3.80.81set)
 
 ### 查询 where
 
